@@ -1,0 +1,27 @@
+extends layout
+
+block append head
+  link(href='/census.css', rel='stylesheet')
+  script(type='text/javascript', src='/jquery-1.11.0.min.js')
+  script(type='text/javascript', src='/d3.v3.min.js')
+  script(type='text/javascript', src='/census.js')
+block append content
+  - var initial = JSON.stringify(locals.initialQuestion || null);
+  div.hidden#initialQuestion(data-question=initial)
+  div#top
+    h1 Brave Collective Census Results
+    h2 February 2014
+    p #{locals.responseCount} responses collected. Thanks everyone!
+    nav#groups
+      each group in locals.groups
+        - var short = group+'0';
+        a(class='group', href='/'+short, data-short=short) #{group}
+  div#main
+    div#prevQ Previous
+    div#question
+      div#top2
+        h3#prompt
+        h4#hint
+      div#graph
+      ul#raw
+    div#nextQ Next

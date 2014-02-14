@@ -1,0 +1,73 @@
+.hidden{ 
+  display:none;
+}
+html, body, #prevQ, #nextQ, #question{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+html, body, #question, #main{
+  position: relative;
+}
+#top1{
+  height: 15%;
+}
+#main{
+  height: 85%;
+}
+#top2{
+  position: absolute;
+  top: 0;
+  left: 5%;
+  width: 90%;
+  height: 10%;
+}
+
+.group{
+  display: inline-block;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin-right: 1em;
+}
+.group:last-child{
+  margin-right: none;
+}
+#prevQ, #nextQ{
+  display: block;
+  position: absolute;
+  width: 5%;
+  cursor: pointer;
+  background-color: #1F931F;
+  vertical-align: middle;
+  line-height: 100%;
+  z-index: 100; 
+}
+#prevQ{
+  left: 0;
+  top: 0;
+}
+#nextQ{
+  right: 0;
+  top: 0;
+}
+#question, #question_old{
+  width: 90%;
+  position: absolute;
+  z-index: 10;
+}
+#question{
+  left: 5%;
+}
+#prompt, #hint{
+  display: block;
+  height: 5%;
+  width: 100%;
+}
+#graph, #raw{
+  display: block;
+  margin: 10% 0 0 0;
+  padding: 0;
+  float: left;
+  width: 50%;
+  height: 90%;
+}
